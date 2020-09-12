@@ -13,6 +13,9 @@ public class SelectionSort {
         int sizeArray = sc.nextInt();
 
         int[] array = new int[sizeArray];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = (int) (Math.random() * 100);
+        }
         System.out.println(Arrays.toString(array));
         for (int left = 0; left < array.length; left++) {
             int minIndex = left;
