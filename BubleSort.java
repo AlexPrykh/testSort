@@ -17,28 +17,12 @@ public class BubleSort {
             array[i] = (int) (Math.random() * 100);
         }
         System.out.println(Arrays.toString(array));
-        int out, i;
-        int outLeft = 0;                    // outer border left
-        int elements = array.length;
-        int outRight = elements - 1;       // outer border right
-
-        for (out = elements - 1; out > 1; out--) {
-
-            for (i = 0; i < outRight; i++) {        // sorts the largesting elements at the end
-                if (array[i] > array[i + 1]) {
-                    swap(array, i, i + 1);
+            for (int i = 1; i < array.length; i++) {
+                for (int j = 0; j < array.length -1; j++) {
+                if (array[i] < array[j]) {
+                    swap(array, i, j);
                 }
             }
-
-            outRight--;                  // the end of the array - the boundary of the sorted part
-
-            for (int j = outRight; j > 0; j--) {     // sorts the smallest element to the beginning
-                if (array[j] < array[j - 1]) {
-                    swap(array, j, j - 1);
-                }
-            }
-
-            outLeft++;
         }
         System.out.println(Arrays.toString(array));
     }
