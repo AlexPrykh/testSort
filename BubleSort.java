@@ -17,11 +17,18 @@ public class BubleSort {
             array[i] = (int) (Math.random() * 100);
         }
         System.out.println(Arrays.toString(array));
-            for (int i = 1; i < array.length; i++) {
-                for (int j = 0; j < array.length -1; j++) {
-                if (array[i] < array[j]) {
-                    swap(array, i, j);
+        boolean isSorted;
+        for (int i = 0; i < array.length; i++) {
+            isSorted = true;
+
+            for (int j = 1; j < (array.length - i); j++) {
+                if (array[j - 1] > array[j]) {
+                   swap(array, j -1, j);
+                    isSorted = false;
                 }
+            }
+            if (isSorted) {
+                break;
             }
         }
         System.out.println(Arrays.toString(array));
